@@ -1,0 +1,24 @@
+menu {
+    display: inline-flex;
+ 
+}
+
+.a2 {
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 30px 15px 15px 15px;
+}
+
+.content_1 {
+    background-color: rgba(250, 245, 241, 0.5);
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif; 
+    border-radius: 7px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шеповалов А.С. Лабораторная 7</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script>
+        function addBlocks() {
+            let blocks = document.getElementById("blocks");
+            for(let i = 0; i < 10; i++) {
+                let block = document.createElement("div");
+                block.innerHTML = "Блок №" + (i+1) + ": " + (2 * i**2);
+                blocks.appendChild(block);
+            }
+        }
+        
+        function ShowExchange() {
+            let exchange = [70.5174, 70.1217, 70.0414, 70.3847, 70.5991,
+                            70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
+            let table = document.getElementById("dollar-Exchange");
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement("tr");
+                let td = document.createElement("td");
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            document.getElementById("detail").innerHTML = "Среднее значение: " + average;
+        }
+
+        function addTransparentBlocks() {
+            let blocks = document.getElementById("tnrasparent-blocks");
+            for(let i = 1; i < 11; i++) {
+                let block = document.createElement("div");
+                block.innerHTML = "Блок №" + (i);
+                block.style.opacity = i*0.1;
+                blocks.appendChild(block);
+            }
+        }
+
+        function BlueAndDark() {
+            let krugi = document.getElementById("divchick");
+            let input = document.getElementById("user-number");
+            let userNumber = parseInt(input.value);
+            for(let i = userNumber; i >= 1; i--) {
+                let krug = document.createElement("div");
+                krug.style.borderRadius = "50%";
+                krug.style.width = "50px";
+                krug.style.height = "50px";
+                krug.style.textAlign = "center";
+                krug.style.lineHeight = "50px";
+                krug.style.display = "inline-block";
+                krug.style.border = "2px red solid"
+                krug.innerHTML = i;
+                if(i % 2 == 0) {
+                    krug.style.backgroundColor = "blue";
+                }
+                else {
+                    krug.style.backgroundColor = "black";
+                }
+                krugi.appendChild(krug);
+            }
+        }
+
+        function umnojenie() {
+            let t = document.getElementById("table");
+            for(let i = 13; i <= 33; i++) {
+                let z = document.createElement("div");
+                z.innerHTML = i + "* 44 = " + i*44;
+                t.appendChild(z)
+            }
+        }
+
+        function kursValut() {
+            let kurs = [70.16, 69.98, 68.82, 68.00, 68.04,
+                        68.00, 67.60, 67.78, 68.22, 68.46]
+            let data = ["27.04.2023", "28.04.2023", "02.05.2023", "03.05.2023", "04.05.2023",
+                        "05.05.2023", "08.05.2023", "10.05.2023", "11.05.2023", "12.05.2023"];
+            let dif = ["-", kurs[1]-kurs[0], kurs[2]-kurs[1], kurs[3]-kurs[2], kurs[4]-kurs[3],
+                            kurs[5]-kurs[4], kurs[6]-kurs[5], kurs[7]-kurs[6], kurs[8]-kurs[7],
+                            kurs[9]-kurs[8], kurs[10]-kurs[9]];
+            let table = document.getElementById("tableValut")
+            for(let i = 0; i < kurs.length; i++) {
+                let tr = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+                td1.innerHTML = kurs[i];
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                td2.innerHTML = data[i];
+                td3.innerHTML = dif[i];
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            let average = document.getElementById("average");
+            let max = document.getElementById("max");
+            let min = document.getElementById("min");
+            for(i = 0; i < kurs.length; i++) {
+                sum = sum + kurs[i];
+            }
+            let sumAll = sum / kurs.length;
+            average.innerHTML = "Среднее значение: " + sumAll;
+            max.innerHTML = "Максимальное значение: " + Math.max.apply(0, kurs);
+            min.innerHTML = "Минимальное значение: " + Math.min.apply(0, kurs);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
+
+        <button onclick="ShowExchange()">Курс доллара</button>
+        <table border="1" id="dollar-Exchange"></table>
+        <div id="detail"></div>
+
+        <button onclick="addTransparentBlocks()">Создать призрачные блоки</button>
+        <div id="tnrasparent-blocks"></div>
+
+        <input type="number" value="5" id="user-number" min="0" max="100000" placeholder="введите число кругов">
+        <button onclick="BlueAndDark()">Белое/Чёрное</button>
+        <div id="divchick"></div>
+
+        <button onclick="umnojenie()">Таблица умножения на 44</button>
+        <div id="table"></div>
+
+        <button onclick="kursValut()">Курс Акций "Детский Мир"</button>
+        <table border="1" id="tableValut"></table>
+        <div id="detailValut"></div>
+        <div id="average"></div>
+        <div id="max"></div>
+        <div id="min"></div>
+    </main>
+    <footer>
+        &copy; Шеповалов А.С. ФБИ-11, 2 курс, 2023
+    </footer>
+</body>
+</html>
