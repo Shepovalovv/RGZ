@@ -13,8 +13,11 @@ menu {
     text-align: center;
     align-items: center;
     text-decoration: none;
+    width: 100%;
+    height: 100%;   
  
 }
+
 
 .a2 {
     text-align: center; 
@@ -22,8 +25,9 @@ menu {
     align-items: center;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
-    margin: 30px 25px 15px 15px;
+    margin: 30px 30px 15px 30px;
     text-decoration: none;
+    color: white;
 }
 
 .content_1 {
@@ -60,14 +64,15 @@ menu {
 }
 
 .text {
+    top: 30px;
     text-align: center;
-    padding: 150px;
+    padding: 195px;
     
 }
 
 .SlideShow h1 {
     border-radius: 50px;
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.5);
 
 }
 
@@ -75,7 +80,91 @@ menu {
     text-align: center;
     text-decoration: none;
     background-color: bisque;
+    padding: 5px;
+    border: solid 1px black;
+    font-size: 18px;
 }
+
+.News {
+    text-align: center;
+    border-bottom: solid 2px black;
+    top: 25px;
+    position: relative;
+    padding: 10px;
+}
+
+.BoxAllNews {
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.BoxNews {
+    margin: 50px 50px;
+    border: solid;
+    width: 280px;
+    height: 270px;
+    padding: 15px;
+    text-align: inherit;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.BoxNews1 {
+    margin: 50px 50px;
+    border: solid;
+    width: 300px;
+    height: 270px;
+    padding: 15px;
+    text-align: inherit;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.BoxNews2 {
+    margin: 50px 50px;
+    border: solid;
+    width: 300px;
+    height: 270px;
+    padding: 15px;
+    text-align: inherit;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.BoxNews:hover {
+    background-image: url(Снимок.PNG);
+    background-repeat: no-repeat;
+    border: solid 3px black;
+    color: white;
+}
+
+.BoxNews1:hover {
+    background-image: url(Снимок1.PNG);
+    background-repeat: no-repeat;
+    border: solid 3px black;
+    color: white;
+}
+
+.BoxNews2:hover {
+    background-image: url(Снимок2.PNG);
+    background-repeat: no-repeat;
+    border: solid 3px black;
+    color: white;
+}
+
+
+
+
+
+
 
 @keyframes changing {
     0% {
