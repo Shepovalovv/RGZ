@@ -251,8 +251,7 @@ main div {
 
 
 .a2:hover{
-    transform: scale(0.98);
-    color: blue;
+    transform: scale(0.97);
 }
 
 
@@ -297,12 +296,6 @@ main div {
     border: solid 3px black;
     color: white;
 }
-
-
-
-
-
-
 
 
 
